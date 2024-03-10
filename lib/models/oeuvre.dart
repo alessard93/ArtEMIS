@@ -7,7 +7,7 @@ class Oeuvre{
   late String adresse;
   late String annee;
   late String arrondissement;
-  late String programme_entente;
+  late String programmeEntente;
   late double latitude;
   late double longitude;
   late String image;
@@ -20,25 +20,25 @@ class Oeuvre{
     required this.adresse,
     required this.annee,
     required this.arrondissement,
-    required this.programme_entente,
+    required this.programmeEntente,
     required this.latitude,
     required this.longitude,
     required this.image,
     required this.geometry
   });
 
-  factory Oeuvre.fromJson(Map<String, dynamic> json) => Oeuvre(
+  factory Oeuvre.fromJson(Map<String, dynamic> json, Map<String, dynamic> json2) => Oeuvre(
     id: json["id"],
     artiste: json["artiste"],
     organisme: json["organisme"],
     adresse: json["adresse"],
     annee: json["annee"],
     arrondissement: json["arrondissement"],
-    programme_entente: json["programme_entente"],
+    programmeEntente: json["programme_entente"],
     latitude: json["latitude"],
     longitude: json["longitude"],
     image: json["image"],
-    geometry: Geometry.fromJson(json["geometry"])
+    geometry: Geometry.fromJson(json2["geometry"])
 
   );
 }
