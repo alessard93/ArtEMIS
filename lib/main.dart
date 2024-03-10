@@ -1,3 +1,4 @@
+import 'package:artemis/screens/card_oeuvre.dart';
 import 'package:artemis/screens/home.dart';
 import 'package:flutter/material.dart';
 
@@ -14,10 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
       ),
-      home: const HomePage(title: 'Flutter Demo Home Page'),
+      home: const OeuvreCard(),
     );
   }
 }
