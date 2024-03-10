@@ -7,7 +7,6 @@ class OeuvreCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     var oeuvresJSON = '''[
       { "id": 1, "artiste": "Yannick Picard", "organisme": "MU", "adresse": "4105, 47e rue (coin Pie IX)", "annee": "2007", "arrondissement": "Villeray–Saint-Michel–Parc-Extension", "programme_entente": "Programme graffitis et murales", "latitude": 45.58041, "longitude": -73.622218, "image": "https:\/\/depot.ville.montreal.qc.ca\/murales\/MU-CentreSaintReneGoupil.jpg", "geometry": { "type": "Point", "coordinates": [ -73.622218, 45.58041 ] }},
       { "id": 2, "artiste": "Artducommun", "organisme": "Corporation de développement urbain Faubourg Saint-Laurent", "adresse": "coin des rues Saint-Laurent et Viger", "annee": "2007", "arrondissement": "Ville-Marie", "programme_entente": "Programme graffitis et murales", "latitude": 45.506855, "longitude": -73.558029, "image": "https:\/\/depot.ville.montreal.qc.ca\/murales\/CDU-MissionOldBrewery–40eExpo67.jpg", "geometry": { "type": "Point", "coordinates": [ -73.558029, 45.506855 ] }},
@@ -23,33 +22,39 @@ class OeuvreCard extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Row(
-          children: [
-            Text(
-              'Oeuvres d''art / Emplacements',
-              style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
-                color: Colors.white
-              )
-            ),
-            SizedBox(width: 4),
-            Text(
-              'Voir tout',
-              style: TextStyle(
-                fontSize: 18,
-                color: Colors.grey
-              ),
-            ),
-          ],
-          ),
-          ListView(
+          const Padding(
+            padding: EdgeInsets.only(left: 14.0, bottom: 2),
+            child: Row(
             children: [
+              Text(
+                'Oeuvres d''art / Emplacements',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white
+                )
+              ),
+              SizedBox(width: 4),
               Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: Container(
+                padding: EdgeInsets.only(top: 8),
+                child: Text(
+                  'Voir tout',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Colors.grey
+                  ),
+                ),
+              ),
+            ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 14.0, right: 14.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ClipRRect(
+                  child: Container(
                   height: 175,
                   decoration: BoxDecoration(
                     image: DecorationImage(
@@ -69,10 +74,10 @@ class OeuvreCard extends StatelessWidget {
                         )
                       ),
                     ),
-                )
-              ),
-              )
-            ],
+                  )
+                ),
+              ],
+            ),
           )
         ],
       )
