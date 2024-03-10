@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
       ),
-      home: const OeuvreCard(),
+      home: const HomePage(title: 'ArtEMIS')
     );
   }
 }
